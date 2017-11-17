@@ -14,9 +14,14 @@ System requirements
 Put the contents of /Work directory under the www-root directory of your Linux Apache2 server.
 
 reminder:
-sudo apt install apache2 php mysql-server libapache2-mod-php chromium-browser python-lxml libcurl4-* php-xml
-sudo ln -s /lib/x86_64-linux-gnu/libssl.so.1.0.0 /lib/x86_64-linux-gnu/libssl.so.1.0.2
-sudo ln -s /lib/x86_64-linux-gnu/libcrypto.so.1.0.0 /lib/x86_64-linux-gnu/libcrypto.so.1.0.2
+sudo apt install apache2 php mysql-server libapache2-mod-php chromium-browser python-lxml
+In openssl source dir:
+./config shared
+
+In libcurl source dir:
+export OPENSSL_ROOT_DIR=/usr/local/ssl/
+cmake ..
+
 
 Access the Sender UI located at:
 http:// 127.0.0.1/Work/Route_Sender/bin/Sender_UI/
